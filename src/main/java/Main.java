@@ -1,12 +1,7 @@
-import java.util.Scanner;
-
 public class Main {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
 
-    System.out.print("Enter your Monthly Wage: ");
-    double monthlywage = sc.nextDouble();
-    sc.nextLine();
+    empinfo.employeeinfo();
 
     double grossWage = grosswage.calculateGrossWage();
     
@@ -25,6 +20,5 @@ public class Main {
     double netpay = deductedWage - withholdingtax;
 
     System.out.println("Net Pay: " + netpay);
-    sc.close();
   }
 }
