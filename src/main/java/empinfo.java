@@ -28,12 +28,11 @@ public class empinfo {
     }
   }
 
-static double monthlyWage() {
+static double monthlyWage(int empID) {
     Scanner sc = new Scanner(System.in);
     double monthlyWage = 0;
     try {
-        System.out.println("Enter your EmployeeID: ");
-        int empID = sc.nextInt();
+  
         BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/monthlywage.txt"));
 
         String line;

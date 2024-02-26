@@ -1,10 +1,20 @@
+import java.util.Scanner;
+
+
 public class Main {
   public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("Enter your EmployeeID: ");
+    int empID = sc.nextInt();
 
-    double monthlywage = empinfo.monthlyWage();
-
+    
     double grossWage = grosswage.calculateGrossWage();
     
+    double monthlywage = empinfo.monthlyWage(empID);
+
+   
+
     double SSSdeduc = sss.Sssdeduc(monthlywage);
     double PhilHealthdeduc = philhealth.PhilHealthdeduc(monthlywage);
     double Pagibigdeduc = pagibig.Pagibigdeduc(monthlywage);
@@ -19,6 +29,6 @@ public class Main {
 
     double netpay = deductedWage - withholdingtax;
 
-    System.out.println("Net Pay: " + netpay);
+    System.out.println("Net Pay: " + netpay); 
   }
 }
