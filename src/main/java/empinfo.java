@@ -28,14 +28,34 @@ public class empinfo {
     }
   }
 
-  static double monthlywage() {
-    double monthlywage = 0;
+static double monthlyWage() {
+    Scanner sc = new Scanner(System.in);
+    double monthlyWage = 0;
     try {
-      BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/monthlywage.txt"));
+        System.out.println("Enter your EmployeeID: ");
+        int empID = sc.nextInt();
+        BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/monthlywage.txt"));
 
+        String line;
+        int lineIndex = 1;
+        boolean found = false;
+        while ((line = reader.readLine()) != null) {
+            if (lineIndex == empID) {
+                System.out.println(line);
+                monthlyWage = Double.parseDouble(line);
+                found = true; 
+                break;
+            }
+            lineIndex++;
+        }
+        if (!found) {
+            System.out.println("Incorrect EmployeeID");
+        }
     } catch (IOException e) {
-      e.printStackTrace();
+        System.err.println("Error reading data: " + e.getMessage());
+    } finally {
+        sc.close();
     }
-
+    return monthlyWage;
   }
 }

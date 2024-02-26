@@ -1,7 +1,7 @@
 public class Main {
   public static void main(String[] args) {
 
-    empinfo.employeeinfo();
+    double monthlywage = empinfo.monthlyWage();
 
     double grossWage = grosswage.calculateGrossWage();
     

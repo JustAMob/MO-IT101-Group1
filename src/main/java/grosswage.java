@@ -4,7 +4,7 @@ public class grosswage {
   static double calculateGrossWage() {
     Scanner sc = new Scanner(System.in);
     
-    System.out.print("Enter your hourly pay rate:");
+    System.out.println("Enter your hourly pay rate:");
     double rate = sc.nextDouble();
     sc.nextLine();
     
