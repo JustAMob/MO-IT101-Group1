@@ -32,7 +32,7 @@ public class Main {
     System.out.println("PhilHealth Contribution: " + PhilHealthdeduc);
     System.out.println("Pag-Ibig Contribution: " + Pagibigdeduc);
 
-    double netpay = deductedWage - withholdingtax;
+    double netpay = (deductedWage - withholdingtax) * 4;
 
     System.out.println("Net Pay: " + netpay); 
    sc.close();
