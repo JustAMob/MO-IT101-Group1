@@ -18,6 +18,7 @@ public class empinfo {
 
       System.out.print("Enter your Monthly Wage: ");
       Double monthlywage = sc.nextDouble();
+      sc.nextLine();
       writer = new BufferedWriter(new java.io.FileWriter("src/main/tempdatabase/monthlywage.txt"));
       writer.write(String.valueOf(monthlywage));
       writer.close();
@@ -50,11 +51,45 @@ static double monthlyWage(int empID) {
         if (!found) {
             System.out.println("Incorrect EmployeeID");
         }
+      reader.close();
+      sc.close();
     } catch (IOException e) {
         System.err.println("Error reading data: " + e.getMessage());
-    } finally {
-        sc.close();
-    }
+    } 
+        
     return monthlyWage;
   }
+
+static String empName(int empID){
+  Scanner sc = new Scanner(System.in);
+  String name = "";
+  try {
+    BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/employee.txt"));
+    String line;
+    int lineIndex = 1;
+    boolean found = false;
+    while ((line = reader.readLine()) != null) {
+      if (lineIndex == empID) {
+        name = line;
+        found = true; 
+        break;
+      }
+      lineIndex++;
+    }
+    if (!found) {
+      System.out.println("Incorrect EmployeeID");
+    }
+    reader.close();
+    sc.close();
+  } catch (IOException e) {
+    System.err.println("Error reading data: " + e.getMessage());
+  } 
+  
+  return name;
+}
+
+
+
+
+  
 }

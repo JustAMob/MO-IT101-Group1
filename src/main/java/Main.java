@@ -7,13 +7,14 @@ public class Main {
     
     System.out.println("Enter your EmployeeID: ");
     int empID = sc.nextInt();
-
+    sc.close();
+    
+    String Name = empinfo.empName(empID);
+    System.out.println("Employee Name: " + Name);
     
     double grossWage = grosswage.calculateGrossWage();
-    
-    double monthlywage = empinfo.monthlyWage(empID);
 
-   
+    double monthlywage = empinfo.monthlyWage(empID);
 
     double SSSdeduc = sss.Sssdeduc(monthlywage);
     double PhilHealthdeduc = philhealth.PhilHealthdeduc(monthlywage);
@@ -30,5 +31,6 @@ public class Main {
     double netpay = deductedWage - withholdingtax;
 
     System.out.println("Net Pay: " + netpay); 
+   
   }
 }
