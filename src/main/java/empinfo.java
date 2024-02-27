@@ -94,7 +94,7 @@ static double hourlyRate(int empID) {
         boolean found = false;
         while ((line = reader.readLine()) != null) {
             if (lineIndex == empID) {
-                System.out.println(line);
+                System.out.println("Hourly rate: "+ line);
                 hourlyRate = Double.parseDouble(line);
                 found = true; 
                 break;
