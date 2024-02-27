@@ -14,7 +14,7 @@ public class Main {
     
     double hours = time.log();
    
-    double grossWage = hours + hourlyrate;
+    double grossWage = (4 * hours) + hourlyrate;
 
     double monthlywage = empinfo.monthlyWage(empID);
 
@@ -30,7 +30,7 @@ public class Main {
     System.out.println("PhilHealth Contribution: " + PhilHealthdeduc);
     System.out.println("Pag-Ibig Contribution: " + Pagibigdeduc);
 
-    double netpay = (deductedWage - withholdingtax) * 4;
+    double netpay = deductedWage - withholdingtax;
 
     System.out.println("Net Pay: " + netpay); 
    sc.close();
