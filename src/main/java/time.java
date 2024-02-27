@@ -6,7 +6,7 @@ public class time {
     double totaltime = 0;
     double totallatededuc = 0;
     
-    for (int day = 1; day <= 1; day++) {
+    for (int day = 1; day <= 7; day++) {
 
     System.out.printf("Enter Login time(Hr:Mn) for Day %d: ", day);
       String timeStringin = sc.nextLine();

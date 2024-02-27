@@ -7,12 +7,16 @@ public class Main {
     
     System.out.println("Enter your EmployeeID: ");
     int empID = sc.nextInt();
-    sc.close();
+   
     
     String Name = empinfo.empName(empID);
     System.out.println("Employee Name: " + Name);
+
+    double hourlyrate = empinfo.hourlyRate(empID);
     
-    double grossWage = grosswage.calculateGrossWage();
+    double hours = time.log();
+   
+    double grossWage = hours + hourlyrate;
 
     double monthlywage = empinfo.monthlyWage(empID);
 
@@ -31,6 +35,6 @@ public class Main {
     double netpay = deductedWage - withholdingtax;
 
     System.out.println("Net Pay: " + netpay); 
-   
+   sc.close();
   }
 }

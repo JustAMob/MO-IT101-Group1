@@ -30,7 +30,6 @@ public class empinfo {
   }
 
 static double monthlyWage(int empID) {
-    Scanner sc = new Scanner(System.in);
     double monthlyWage = 0;
     try {
   
@@ -52,7 +51,6 @@ static double monthlyWage(int empID) {
             System.out.println("Incorrect EmployeeID");
         }
       reader.close();
-      sc.close();
     } catch (IOException e) {
         System.err.println("Error reading data: " + e.getMessage());
     } 
@@ -61,7 +59,6 @@ static double monthlyWage(int empID) {
   }
 
 static String empName(int empID){
-  Scanner sc = new Scanner(System.in);
   String name = "";
   try {
     BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/employee.txt"));
@@ -80,16 +77,39 @@ static String empName(int empID){
       System.out.println("Incorrect EmployeeID");
     }
     reader.close();
-    sc.close();
   } catch (IOException e) {
     System.err.println("Error reading data: " + e.getMessage());
   } 
   
-  return name;
-}
+    return name;
+  }
+static double hourlyRate(int empID) {
+    double hourlyRate = 0;
+    try {
 
+        BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/hourlyrate.txt"));
 
+        String line;
+        int lineIndex = 1;
+        boolean found = false;
+        while ((line = reader.readLine()) != null) {
+            if (lineIndex == empID) {
+                System.out.println(line);
+                hourlyRate = Double.parseDouble(line);
+                found = true; 
+                break;
+            }
+            lineIndex++;
+        }
+        if (!found) {
+            System.out.println("Incorrect EmployeeID");
+        }
+      reader.close();
+    } catch (IOException e) {
+        System.err.println("Error reading data: " + e.getMessage());
+    } 
 
-
+    return hourlyRate;
+  }
   
 }
