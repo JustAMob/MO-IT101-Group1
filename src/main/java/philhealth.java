@@ -10,7 +10,7 @@ public class philhealth {
     else if (wage >= 10000.01 && wage <= 59999.99){
       contribution = wage * 0.03;
     }
-    else if (wage == 60000){
+    else if (wage >= 60000){
       contribution = 1800;
     }
     else{

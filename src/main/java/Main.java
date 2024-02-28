@@ -14,7 +14,7 @@ public class Main {
     
     double hours = time.log();
    
-    double grossWage = (4 * hours) + hourlyrate;
+    double grossWage = (30 * hours) * hourlyrate;
 
     double monthlywage = empinfo.monthlyWage(empID);
 
