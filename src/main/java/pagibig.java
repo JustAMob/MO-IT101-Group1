@@ -18,7 +18,7 @@ public class pagibig {
     }
     
     double contribution = employee + management;
-    
+    // Maximum contribution amount is 100
     if (contribution > 100){
       contribution = 100;
       management = 50;

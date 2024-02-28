@@ -5,7 +5,7 @@ import java.io.BufferedReader;
 
 public class empinfo {
   static void employeeinfo() {
-
+    // Adding new employee
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Enter your name: ");
@@ -16,6 +16,8 @@ public class empinfo {
       writer.newLine();
       writer.close();
 
+
+      // Adding monthlywage of the new employee
       System.out.print("Enter your Monthly Wage: ");
       Double monthlywage = sc.nextDouble();
       sc.nextLine();
@@ -34,13 +36,14 @@ static double monthlyWage(int empID) {
     try {
   
         BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/monthlywage.txt"));
-
+      // Finding which line the monthlywage for the employee is on
         String line;
         int lineIndex = 1;
         boolean found = false;
         while ((line = reader.readLine()) != null) {
             if (lineIndex == empID) {
                 System.out.println(line);
+              // Converting the string to a double
                 monthlyWage = Double.parseDouble(line);
                 found = true; 
                 break;
@@ -62,6 +65,7 @@ static String empName(int empID){
   String name = "";
   try {
     BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/employee.txt"));
+    // Finding which line the employee is on
     String line;
     int lineIndex = 1;
     boolean found = false;
@@ -86,7 +90,7 @@ static String empName(int empID){
 static double hourlyRate(int empID) {
     double hourlyRate = 0;
     try {
-
+      // Finding which line the hourly rate of the employee is on
         BufferedReader reader = new BufferedReader(new java.io.FileReader("src/main/tempdatabase/hourlyrate.txt"));
 
         String line;
@@ -95,6 +99,7 @@ static double hourlyRate(int empID) {
         while ((line = reader.readLine()) != null) {
             if (lineIndex == empID) {
                 System.out.println("Hourly rate: "+ line);
+              // Converting the string to a double
                 hourlyRate = Double.parseDouble(line);
                 found = true; 
                 break;

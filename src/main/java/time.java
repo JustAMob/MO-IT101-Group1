@@ -6,7 +6,7 @@ public class time {
     double totaltime = 0;
     double totallatededuc = 0;
     
-    for (int day = 1; day <= 1; day++) {
+    for (int day = 1; day <= 2; day++) {
 
     System.out.printf("Enter Login time(Hr:Mn) for Day %d: ", day);
       String timeStringin = sc.nextLine();
@@ -24,10 +24,12 @@ public class time {
 
       double time = logouttime - logintime;
 
-      System.out.println("Total hours worked: " + time);
+      System.out.println("Hours worked that day: " + time);
       totaltime += time;
-
+      
     }
+    
+    System.out.println("Totat hours worked: "+ totaltime);
     sc.close();
     return totaltime - totallatededuc;
   }

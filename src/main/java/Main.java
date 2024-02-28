@@ -3,27 +3,30 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    
+
+    /*-----------Get the Employee Information-----------*/
     System.out.println("Enter your EmployeeID: ");
     int empID = sc.nextInt();
-   
+ 
     String Name = empinfo.empName(empID);
     System.out.println("Employee Name: " + Name);
-
-    double hourlyrate = empinfo.hourlyRate(empID);
     
-    double hours = time.log();
-   
-    double grossWage = (30 * hours) * hourlyrate;
-
     double monthlywage = empinfo.monthlyWage(empID);
 
+
+    /*-----------Calculate Grosswage-----------*/
+    double hourlyrate = empinfo.hourlyRate(empID);
+    double hours = time.log();
+    double grossWage = (15 * hours) * hourlyrate;
+
+
+    /*---------Calculate Government Deductions---------*/
     double SSSdeduc = sss.Sssdeduc(monthlywage);
     double PhilHealthdeduc = philhealth.PhilHealthdeduc(monthlywage);
     double Pagibigdeduc = pagibig.Pagibigdeduc(monthlywage);
-
     double deductedWage = grossWage - (SSSdeduc + PhilHealthdeduc + Pagibigdeduc);
-
+    
+    /*---------Calculate Tax Deductions---------*/
     double withholdingtax = tax.taxdeduc(deductedWage);
 
     System.out.println("SSS Contribution: " + SSSdeduc);
