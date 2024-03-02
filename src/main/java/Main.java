@@ -17,7 +17,7 @@ public class Main {
     /*-----------Calculate Grosswage-----------*/
     double hourlyrate = empinfo.hourlyRate(empID);
     double hours = time.log();
-    double grossWage = (15 * hours) * hourlyrate;
+    double grossWage = (4 * hours) * hourlyrate;
 
 
     /*---------Calculate Government Deductions---------*/
