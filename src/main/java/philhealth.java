@@ -3,7 +3,7 @@ public class philhealth {
 
     double contribution;
     
-    if (wage == 10000){
+    if (wage <= 10000){
       contribution = 300;
     }
     else if (wage >= 10000.01 && wage <= 59999.99){
