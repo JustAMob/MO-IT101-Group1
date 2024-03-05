@@ -45,6 +45,7 @@ static double monthlyWage(int empID) {
                 System.out.println(line);
               // Converting the string to a double
                 monthlyWage = Double.parseDouble(line);
+                System.out.println("Monthly wage: " + monthlyWage);
                 found = true; 
                 break;
             }

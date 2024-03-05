@@ -6,11 +6,11 @@ public class time {
     double totaltime = 0;
     double totallatededuc = 0;
     
-    for (int day = 1; day <= 7; day++) {
+    for (int day = 1; day <= 7; day++) { 
 
     System.out.printf("Enter Login time(Hr:Mn) for Day %d: ", day);
-      String timeStringin = sc.nextLine();
-
+      String timeStringin = sc.nextLIne();
+      
       int latededuc = late.totallate(timeStringin);
       
       totallatededuc += latededuc;
@@ -26,7 +26,7 @@ public class time {
 
       System.out.println("Hours worked that day: " + time);
       totaltime += time;
-      
+ 
     }
     
     System.out.println("Totat hours worked: "+ totaltime);
@@ -34,12 +34,13 @@ public class time {
     return totaltime - totallatededuc;
   }
   static double timeConverter(String timeString) {
-    String[] timeParts = timeString.split(":");
+    String[] timeParts = timeString.split(":"); 
 
     int hours = Integer.parseInt(timeParts[0]);
     int minutes = Integer.parseInt(timeParts[1]);
-
+                        
     int totalMinutes = hours * 60 + minutes;
+                                          
     double totalTimeInHours = (double) totalMinutes / 60;
 
     return totalTimeInHours;

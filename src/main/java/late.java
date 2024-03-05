@@ -6,6 +6,7 @@ public class late {
     int hours = Integer.parseInt(timeParts[0]);
     int minutes = Integer.parseInt(timeParts[1]);
     // Employee's are given 10 minutes grace period
+
     if (hours == 8 && minutes > 11){
       return 1;
     }
