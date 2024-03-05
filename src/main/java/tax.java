@@ -1,5 +1,5 @@
 public class tax {
-  static double taxdeduc (double deductedwage){
+  static double taxdeduc (double deductedwage){ //checks which income range the input falls into, then calculates the tax accordingly
     double tax = 0;
     if(deductedwage >= 20833 && deductedwage <= 33333){
       tax = (deductedwage - 20833) * 0.2;
@@ -20,6 +20,6 @@ public class tax {
       tax = 0;
     }
     System.out.println("Tax Deduction: " + tax);
-    return tax;
+    return tax; //returns the calculated tax value
   }
 }

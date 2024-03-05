@@ -3,10 +3,10 @@ public class late {
     
     String[] timeParts = timeString.split(":");
 
-    int hours = Integer.parseInt(timeParts[0]);
+    int hours = Integer.parseInt(timeParts[0]); // Convert string to integer. Array format
     int minutes = Integer.parseInt(timeParts[1]);
     // Employee's are given 10 minutes grace period
-    if (hours == 8 && minutes > 11){
+    if (hours == 8 && minutes > 11){ //Checks how many hours to deduct based on log-in time
       return 1;
     }
     switch (hours){

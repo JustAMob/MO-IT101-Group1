@@ -1,9 +1,8 @@
 
 public class sss {
-  static double Sssdeduc (double wage){
+  static double Sssdeduc (double wage){ //checks which income range the input falls into, then calculates the deductions accordingly
     
-    if (wage < 3250){
-        return 135.00;
+    if (wage < 3250){return 135.00;
     }
     else if (wage >= 3250 && wage <= 3750){ return 157.50;
     }

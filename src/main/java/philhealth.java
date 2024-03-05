@@ -1,5 +1,5 @@
 public class philhealth {
-  static double PhilHealthdeduc (double wage){
+  static double PhilHealthdeduc (double wage){ //checks which income range the input falls into, then calculates the deductions accordingly
 
     double contribution;
     
