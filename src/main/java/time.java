@@ -26,10 +26,9 @@ public class time {
       double time = logouttime - logintime;
       int breaktime = breakTime(time);
 
-
-      System.out.println("Hours worked that day: " + time);
-      totaltime += time - breaktime;
- 
+      double daytime = time - breaktime;
+      System.out.println("Hours worked that day: " + daytime);
+      totaltime += daytime - breaktime;
     }
     
     System.out.println("Totat hours worked: "+ totaltime);

@@ -14,13 +14,12 @@ static double monthlyWage(int empID) {
         boolean found = false;
         while ((line = reader.readLine()) != null) {
             if (lineIndex == empID) {
-                System.out.println(line);
               // Converting the string to a double
                 monthlyWage = Double.parseDouble(line);
                 found = true; 
                 break;
             }
-            lineIndex++;
+            lineIndex++;  
         }
         if (!found) {
             System.out.println("Incorrect EmployeeID");
