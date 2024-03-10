@@ -49,7 +49,7 @@ public class time {
   }
   static int breakTime(double time){
     int breaktime = 1;
-    if (time <= 4 ){
+    if (time <= 4.99 ){
       breaktime = 0;
     }
     return breaktime;

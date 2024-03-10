@@ -10,19 +10,18 @@ public class late {
     if (hours == 8 && minutes > 11){
       return 1;
     }
+    else if (hours == 1 && minutes > 11){
+      return 1;
+    }
     switch (hours){
       case 9:
         return 2;
       case 10:
         return 3;
-      case 11:
-        return 4;
-      case 12:
-        return 5;
-      case 13:
-        return 6;
-      case 14:
-        return 7;
+      case 2:
+        return 2;
+      case 3:
+        return 3;
     }
           
     return 0;
