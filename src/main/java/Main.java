@@ -14,11 +14,6 @@ public class Main{
     
     double monthlywage = empinfo.monthlyWage(empID);
     System.out.println("Monthly wage: " + monthlywage); 
-    
-    double[] allowances = empinfo.calculateAllowances(empID);
-    System.out.println("Rice Subsidy: " + allowances[0]);
-    System.out.println("Phone Allowance: " + allowances[1]);
-    System.out.println("Clothes Allowance: " + allowances[2]);
 
     /*-----------Calculate Grosswage-----------*/
     double hourlyrate = empinfo.hourlyRate(empID);
@@ -32,13 +27,18 @@ public class Main{
     double Pagibigdeduc = pagibig.Pagibigdeduc(monthlywage);
     double deductedWage = grossWage - (SSSdeduc + PhilHealthdeduc + Pagibigdeduc);
     
-    /*---------Calculate Tax Deductions---------*/
+    /*------------Calculate Tax Deductions------------*/
     double withholdingtax = tax.taxdeduc(deductedWage);
 
     System.out.println("SSS Contribution: " + SSSdeduc);
     System.out.println("PhilHealth Contribution: " + PhilHealthdeduc);
     System.out.println("Pag-Ibig Contribution: " + Pagibigdeduc);
 
+ /*------------Retrieve & Show Allowances------------*/
+    double[] allowances = empinfo.calculateAllowances(empID);
+    System.out.println("Rice Subsidy: " + allowances[0]);
+    System.out.println("Phone Allowance: " + allowances[1]);
+    System.out.println("Clothes Allowance: " + allowances[2]);
     
     double netpay = deductedWage - withholdingtax;
 
