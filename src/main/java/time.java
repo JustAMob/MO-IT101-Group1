@@ -17,15 +17,18 @@ public class time {
 
       double logintime = timeConverter(timeStringin);
 
+
     System.out.printf("Enter Logout time(Hr:Mn) for Day %d: ", day);
       String timeStringout = sc.nextLine();
 
       double logouttime = timeConverter(timeStringout);
 
       double time = logouttime - logintime;
+      int breaktime = breakTime(time);
+
 
       System.out.println("Hours worked that day: " + time);
-      totaltime += time;
+      totaltime += time - breaktime;
  
     }
     
@@ -45,5 +48,13 @@ public class time {
 
     return totalTimeInHours;
   }
+  static int breakTime(double time){
+    int breaktime = 1;
+    if (time <= 4 ){
+      breaktime = 0;
+    }
+    return breaktime;
+  }  
+  
 
 }
