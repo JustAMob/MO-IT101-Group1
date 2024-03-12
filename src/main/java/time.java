@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class time {
-  static double log() {
+  static double log(int daysworked) {
     Scanner sc = new Scanner(System.in);
     double totaltime = 0;
     double totallatededuc = 0;
     
-    for (int day = 1; day <= 7; day++) { 
+    for (int day = 1; day <= daysworked; day++) { 
 
     System.out.printf("Enter Login time(Hr:Mn) for Day %d: ", day);
       String timeStringin = sc.nextLine();
