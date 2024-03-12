@@ -27,7 +27,7 @@ public class Main{
     /*---------------Calculate Grosswage---------------*/
     System.out.println("\n\n\n|--------------Time in and Time out--------------| \n");
     double hours = time.log(days);
-    double grossWage = (4 * hours) * hourlyrate;
+    double grossWage =  hours * hourlyrate;
 
 
     /*---------Calculate Government Deductions---------*/
