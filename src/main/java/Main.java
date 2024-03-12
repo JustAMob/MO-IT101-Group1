@@ -42,7 +42,8 @@ public class Main{
 
     /*-------------Calculate Tax Deductions-------------*/
     System.out.println("\n\n\n|--------------Deductions--------------| \n");
-    System.out.println("Total Government Deductions: "+ Totaldeduction);
+    System.out.println("Total Deductions: "+ Totaldeduction + withholdingtax);
+    System.out.println("Withholding Tax: " + withholdingtax);
     System.out.println("SSS Contribution: " + SSSdeduc);
     System.out.println("PhilHealth Contribution: " + PhilHealthdeduc);
     System.out.println("Pag-Ibig Contribution: " + Pagibigdeduc);
