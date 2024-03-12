@@ -15,16 +15,12 @@ public class Main{
     System.out.println("\n\n\n|--------------Employee Information--------------| \n");
     String Name = empinfo.empName(empID);
     System.out.println("Employee Name: " + Name);
-    
     String position = empinfo.position(empID);
     System.out.println("Position: " + position);
-
     String bday = empinfo.birthday(empID);
     System.out.println("Birthday: " + bday);
-
     double monthlywage = empinfo.monthlyWage(empID);
     System.out.println("Monthly wage: " + monthlywage); 
-    
     double hourlyrate = empinfo.hourlyRate(empID);
     System.out.println("Hourly rate: " + hourlyrate); 
 
