@@ -64,8 +64,8 @@ public class Main{
     System.out.println("Net Pay: " + netpay); 
    sc.close();
   }
-  public static int sumArray(int[] array) {
-    int sum = 0; 
+  public static double sumArray(double[] array) {
+    double sum = 0; 
     for (int i = 0; i < array.length; i++) {
         sum += array[i]; 
     }
