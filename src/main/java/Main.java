@@ -70,5 +70,5 @@ public class Main{
         sum += array[i]; 
     }
     return sum; 
-
+  }
 }
