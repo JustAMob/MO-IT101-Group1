@@ -12,6 +12,12 @@ public class Main{
     String Name = empinfo.empName(empID);
     System.out.println("Employee Name: " + Name);
     
+    String position = empinfo.position(empID);
+    System.out.println("Position: " + position);
+
+    String bday = empinfo.birthday(empID);
+    System.out.println("Birthday: " + bday);
+
     double monthlywage = empinfo.monthlyWage(empID);
     System.out.println("Monthly wage: " + monthlywage); 
 

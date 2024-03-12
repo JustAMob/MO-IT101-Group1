@@ -3,27 +3,47 @@ import java.io.BufferedReader;
 
 
 public class empinfo{
+  static String empName(int empID){
+    String name = "";
+    try {
+      BufferedReader reader = new BufferedReader(new java.io.FileReader("employee.txt"));
+      name = StringLineFinder(empID, reader);
+      reader.close();
+    } catch (IOException e) {
+      System.err.println("Error reading data: " + e.getMessage());
+    }  
+      return name;
+    }
+
+static String position(int empID){
+  String position = "";
+  try {
+    BufferedReader reader = new BufferedReader(new java.io.FileReader("position.txt"));
+    position = StringLineFinder(empID, reader);
+    reader.close();
+  } catch (IOException e) {
+    System.err.println("Error reading data: " + e.getMessage());
+  }  
+    return position;
+  }    
+
+static String birthday(int empID){
+  String bday = "";
+  try {
+    BufferedReader reader = new BufferedReader(new java.io.FileReader("birthday.txt"));
+    bday = StringLineFinder(empID, reader);
+    reader.close();
+  } catch (IOException e) {
+    System.err.println("Error reading data: " + e.getMessage());
+  }  
+    return bday;
+  }
+
 static double monthlyWage(int empID) {
     double monthlyWage = 0;
     try {
-  
         BufferedReader reader = new BufferedReader(new java.io.FileReader("monthlywage.txt"));
-      // Finding which line the monthlywage for the employee is on
-        String line;
-        int lineIndex = 1;
-        boolean found = false;
-        while ((line = reader.readLine()) != null) {
-            if (lineIndex == empID) {
-              // Converting the string to a double
-                monthlyWage = Double.parseDouble(line);
-                found = true; 
-                break;
-            }
-            lineIndex++;  
-        }
-        if (!found) {
-            System.out.println("Incorrect EmployeeID");
-        }
+        monthlyWage = LineFinder(empID, reader);
       reader.close();
     } catch (IOException e) {
         System.err.println("Error reading data: " + e.getMessage());
@@ -32,59 +52,15 @@ static double monthlyWage(int empID) {
     return monthlyWage;
   }
 
-static String empName(int empID){
-  String name = "";
-  try {
-    BufferedReader reader = new BufferedReader(new java.io.FileReader("employee.txt"));
-    // Finding which line the employee is on
-    String line;
-    int lineIndex = 1;
-    boolean found = false;
-    while ((line = reader.readLine()) != null) {
-      if (lineIndex == empID) {
-        name = line;
-        found = true; 
-        break;
-      }
-      lineIndex++;
-    }
-    if (!found) {
-      System.out.println("Incorrect EmployeeID");
-    }
-    reader.close();
-  } catch (IOException e) {
-    System.err.println("Error reading data: " + e.getMessage());
-  } 
-  
-    return name;
-  }
 static double hourlyRate(int empID) {
     double hourlyRate = 0;
     try {
-      // Finding which line the hourly rate of the employee is on
         BufferedReader reader = new BufferedReader(new java.io.FileReader("hourlyrate.txt"));
-
-        String line;
-        int lineIndex = 1;
-        boolean found = false;
-        while ((line = reader.readLine()) != null) {
-            if (lineIndex == empID) {
-                System.out.println("Hourly rate: "+ line);
-              // Converting the string to a double
-                hourlyRate = Double.parseDouble(line);
-                found = true; 
-                break;
-            }
-            lineIndex++;
-        }
-        if (!found) {
-            System.out.println("Incorrect EmployeeID");
-        }
+        hourlyRate = LineFinder(empID, reader);
       reader.close();
     } catch (IOException e) {
         System.err.println("Error reading data: " + e.getMessage());
     } 
-
     return hourlyRate;
   }
   
@@ -104,7 +80,6 @@ static double hourlyRate(int empID) {
       reader.close();  
   } catch (IOException e) {
       System.err.println("Error reading allowance data: " + e.getMessage());
-     
   }
   return allowances;
 }
@@ -112,8 +87,6 @@ static double hourlyRate(int empID) {
   private static double LineFinder(int empID,BufferedReader reader){
     double Amount = 0;
     try {
-        
-        
         String line;
         int lineIndex = 1;
         boolean found = false;
@@ -129,15 +102,34 @@ static double hourlyRate(int empID) {
             System.out.println("Incorrect EmployeeID");
         }
       reader.close();
-      
-      
     } catch (IOException e) {
         System.err.println("Error reading data: " + e.getMessage());
     } 
-
-   
     return Amount;
   }
 
+  private static String StringLineFinder(int empID, BufferedReader reader){
+    String text = "";
+    try {
+        String line;
+        int lineIndex = 1;
+        boolean found = false;
+        while ((line = reader.readLine()) != null) {
+            if (lineIndex == empID) {
+                text = line;
+                found = true; 
+                break;
+            }
+            lineIndex++;
+        }
+        if (!found) {
+            System.out.println("Incorrect EmployeeID");
+        }
+      reader.close();
+    } catch (IOException e) {
+        System.err.println("Error reading data: " + e.getMessage());
+    } 
+    return text;
+  }
+
 }
- 
