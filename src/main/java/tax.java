@@ -19,7 +19,7 @@ public class tax {
     else{
       tax = 0;
     }
-    System.out.println("Tax Deduction: " + tax);
+    
     return tax;
   }
 }
