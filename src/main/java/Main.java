@@ -6,7 +6,7 @@ public class Main{
     Scanner sc = new Scanner(System.in);
 
     /*-----------Get the Employee Information-----------*/
-    System.out.print("Enter the amount of days worked in amonth: ");
+    System.out.print("Enter the amount of days worked in a month: ");
     int days = sc.nextInt();
 
     System.out.print("Enter your EmployeeID: ");
