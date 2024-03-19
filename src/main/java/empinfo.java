@@ -6,7 +6,7 @@ public class empinfo{
   static String empName(int empID){
     String name = "";
     try {
-      BufferedReader reader = new BufferedReader(new java.io.FileReader("employee.txt"));
+      BufferedReader reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/employee.txt"));
       name = StringLineFinder(empID, reader);
       reader.close();
     } catch (IOException e) {
@@ -18,7 +18,7 @@ public class empinfo{
 static String position(int empID){
   String position = "";
   try {
-    BufferedReader reader = new BufferedReader(new java.io.FileReader("position.txt"));
+    BufferedReader reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/position.txt"));
     position = StringLineFinder(empID, reader);
     reader.close();
   } catch (IOException e) {
@@ -30,7 +30,7 @@ static String position(int empID){
 static String birthday(int empID){
   String bday = "";
   try {
-    BufferedReader reader = new BufferedReader(new java.io.FileReader("birthday.txt"));
+    BufferedReader reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/birthday.txt"));
     bday = StringLineFinder(empID, reader);
     reader.close();
   } catch (IOException e) {
@@ -42,7 +42,7 @@ static String birthday(int empID){
 static double monthlyWage(int empID) {
     double monthlyWage = 0;
     try {
-        BufferedReader reader = new BufferedReader(new java.io.FileReader("monthlywage.txt"));
+        BufferedReader reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/monthlywage.txt"));
         monthlyWage = LineFinder(empID, reader);
       reader.close();
     } catch (IOException e) {
@@ -55,7 +55,7 @@ static double monthlyWage(int empID) {
 static double hourlyRate(int empID) {
     double hourlyRate = 0;
     try {
-        BufferedReader reader = new BufferedReader(new java.io.FileReader("hourlyrate.txt"));
+        BufferedReader reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/hourlyrate.txt"));
         hourlyRate = LineFinder(empID, reader);
       reader.close();
     } catch (IOException e) {
@@ -67,15 +67,15 @@ static double hourlyRate(int empID) {
   public static double[] calculateAllowances(int empID) {
     double[] allowances = new double[3]; 
     try  {
-      BufferedReader reader = new BufferedReader(new java.io.FileReader("Ricesubsidy.txt"));
+      BufferedReader reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/Ricesubsidy.txt"));
       allowances[0] = LineFinder(empID, reader);  
       reader.close();   
 
-      reader = new BufferedReader(new java.io.FileReader("PhoneAllowance.txt"));  
+      reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/PhoneAllowance.txt"));  
       allowances[1] = LineFinder(empID, reader);
       reader.close();  
 
-      reader = new BufferedReader(new java.io.FileReader("ClothesAllowance.txt"));  
+      reader = new BufferedReader(new java.io.FileReader("C:/Users/Ck/Downloads/Computer-Programming-1-or-Group-1/src/main/database/ClothesAllowance.txt"));  
       allowances[2] = LineFinder(empID, reader);
       reader.close();  
   } catch (IOException e) {
