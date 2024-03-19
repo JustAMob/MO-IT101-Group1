@@ -15,7 +15,7 @@ public class empinfo{
       return name;
     }
 
-static String position(int empID){
+static String position(int empID){ //Employee position
   String position = "";
   try {
     BufferedReader reader = new BufferedReader(new java.io.FileReader("position.txt"));
@@ -27,7 +27,7 @@ static String position(int empID){
     return position;
   }    
 
-static String birthday(int empID){
+static String birthday(int empID){ //Employee birthday
   String bday = "";
   try {
     BufferedReader reader = new BufferedReader(new java.io.FileReader("birthday.txt"));
@@ -39,7 +39,7 @@ static String birthday(int empID){
     return bday;
   }
 
-static double monthlyWage(int empID) {
+static double monthlyWage(int empID) { //Employee monthly wage
     double monthlyWage = 0;
     try {
         BufferedReader reader = new BufferedReader(new java.io.FileReader("monthlywage.txt"));
@@ -52,7 +52,7 @@ static double monthlyWage(int empID) {
     return monthlyWage;
   }
 
-static double hourlyRate(int empID) {
+static double hourlyRate(int empID) { //Employee hourly rate
     double hourlyRate = 0;
     try {
         BufferedReader reader = new BufferedReader(new java.io.FileReader("hourlyrate.txt"));
@@ -64,7 +64,7 @@ static double hourlyRate(int empID) {
     return hourlyRate;
   }
   
-  public static double[] calculateAllowances(int empID) {
+  public static double[] calculateAllowances(int empID) { //Employee allowances
     double[] allowances = new double[3]; 
     try  {
       BufferedReader reader = new BufferedReader(new java.io.FileReader("Ricesubsidy.txt"));
@@ -84,7 +84,7 @@ static double hourlyRate(int empID) {
   return allowances;
 }
   
-  private static double LineFinder(int empID,BufferedReader reader){
+  private static double LineFinder(int empID,BufferedReader reader){ //Finds a specific line in a file based on employee ID. Returns the corresponding amount associated with that employee ID
     double Amount = 0;
     try {
         String line;
@@ -108,7 +108,7 @@ static double hourlyRate(int empID) {
     return Amount;
   }
 
-  private static String StringLineFinder(int empID, BufferedReader reader){
+  private static String StringLineFinder(int empID, BufferedReader reader){ //Finds a specific line in a file based on employee ID. Returns the entire line as a string
     String text = "";
     try {
         String line;

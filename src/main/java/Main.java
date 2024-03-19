@@ -6,7 +6,7 @@ public class Main{
     Scanner sc = new Scanner(System.in);
 
     /*-----------Get the Employee Information-----------*/
-    System.out.print("Enter the amount of days worked in amonth: ");
+    System.out.print("Enter the amount of days worked in a month: ");
     int days = sc.nextInt();
 
     System.out.print("Enter your EmployeeID: ");
@@ -42,11 +42,11 @@ public class Main{
 
     /*-------------Calculate Tax Deductions-------------*/
     System.out.println("\n\n\n|--------------Deductions--------------| \n");
-    System.out.println("Total Deductions: "+ Totaldeduction + withholdingtax);
-    System.out.println("Withholding Tax: " + withholdingtax);
     System.out.println("SSS Contribution: " + SSSdeduc);
     System.out.println("PhilHealth Contribution: " + PhilHealthdeduc);
     System.out.println("Pag-Ibig Contribution: " + Pagibigdeduc);
+    System.out.println("Withholding Tax: " + withholdingtax);
+    System.out.println("Total Deductions: "+ Totaldeduction + withholdingtax);
 
     /*------------Retrieve & Show Allowances------------*/
     System.out.println("\n\n\n|--------------Allowances--------------| \n");
@@ -55,13 +55,15 @@ public class Main{
     System.out.println("Phone Allowance: " + allowances[1]);
     System.out.println("Clothes Allowance: " + allowances[2]);
     double totalallowances = sumArray(allowances);
+    System.out.println("Total Allowances: " + totalallowances);
 
+    /*-------------Calculate Net Pay-------------*/
     System.out.println("\n\n\n|--------------Netpay--------------| \n");
     double netpay = (deductedWage + totalallowances)- withholdingtax;
     System.out.println("Net Pay: " + netpay); 
    sc.close();
   }
-  public static double sumArray(double[] array) {
+  public static double sumArray(double[] array) { //To get sum of all elements in allowances array
     double sum = 0; 
     for (int i = 0; i < array.length; i++) {
         sum += array[i]; 

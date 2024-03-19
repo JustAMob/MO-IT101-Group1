@@ -11,7 +11,7 @@ public class time {
     System.out.printf("Enter Login time(Hr:Mn) for Day %d: ", day);
       String timeStringin = sc.nextLine();
       
-      int latededuc = late.totallate(timeStringin);
+      int latededuc = late.totallate(timeStringin); //check for lates
       
       totallatededuc += latededuc;
 
@@ -24,18 +24,18 @@ public class time {
       double logouttime = timeConverter(timeStringout);
 
       double time = logouttime - logintime;
-      int breaktime = breakTime(time);
+      int breaktime = breakTime(time); //implement break time
 
       double daytime = time - breaktime;
       System.out.println("Hours worked that day: " + daytime);
       totaltime += daytime - breaktime;
     }
     
-    System.out.println("Totat hours worked: "+ totaltime);
+    System.out.println("Total hours worked: "+ totaltime);
     sc.close();
     return totaltime - totallatededuc;
   }
-  static double timeConverter(String timeString) {
+  static double timeConverter(String timeString) { //converts string (Hr:Mn) -> to double
     String[] timeParts = timeString.split(":"); 
 
     int hours = Integer.parseInt(timeParts[0]);
@@ -47,9 +47,9 @@ public class time {
 
     return totalTimeInHours;
   }
-  static int breakTime(double time){
+  static int breakTime(double time){ //checks if break time is applicable
     int breaktime = 1;
-    if (time <= 4.99 ){
+    if (time <= 4.99 ){ //if less than 5 hours of work, no break time
       breaktime = 0;
     }
     return breaktime;
