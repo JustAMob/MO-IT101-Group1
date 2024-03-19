@@ -31,7 +31,7 @@ public class time {
       totaltime += daytime - breaktime;
     }
     
-    System.out.println("Totat hours worked: "+ totaltime);
+    System.out.println("Total hours worked: "+ totaltime);
     sc.close();
     return totaltime - totallatededuc;
   }
