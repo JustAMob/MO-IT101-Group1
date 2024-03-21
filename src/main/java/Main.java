@@ -28,7 +28,7 @@ public class Main{
     System.out.println("\n\n\n|--------------Time in and Time out--------------| \n");
     double hours = time.log(days);
     double grossWage =  hours * hourlyrate;
-
+    System.out.println("Grosswage: " + grossWage);
 
     /*---------Calculate Government Deductions---------*/
     double SSSdeduc = sss.Sssdeduc(monthlywage);
@@ -59,6 +59,7 @@ public class Main{
 
     /*-------------Calculate Net Pay-------------*/
     System.out.println("\n\n\n|--------------Netpay--------------| \n");
+    System.out.println("Deductedwage without tax: " + deductedWage);
     double netpay = (deductedWage + totalallowances)- withholdingtax;
     System.out.println("Net Pay: " + netpay); 
    sc.close();
