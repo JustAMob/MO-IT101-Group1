@@ -6,7 +6,11 @@ public class late {
     int hours = Integer.parseInt(timeParts[0]);
     int minutes = Integer.parseInt(timeParts[1]);
     // Employee's are given 10 minutes grace period
-    if (hours == 8 && minutes > 11){
+
+    if (hours == 8 && minutes >= 11){
+      return 1;
+    }
+    else if (hours == 1 && minutes >= 11){
       return 1;
     }
     switch (hours){
@@ -14,14 +18,10 @@ public class late {
         return 2;
       case 10:
         return 3;
-      case 11:
-        return 4;
-      case 12:
-        return 5;
-      case 13:
-        return 6;
-      case 14:
-        return 7;
+      case 2:
+        return 2;
+      case 3:
+        return 3;
     }
           
     return 0;

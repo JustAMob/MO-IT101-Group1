@@ -92,7 +92,7 @@ public class sss {
     else if(wage >= 24250 && wage <= 24750){ return 1102.50;
     }
     else{
-      return 11250.00;
+      return 1125.00;
     }
 
   }  

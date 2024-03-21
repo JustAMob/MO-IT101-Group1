@@ -1,21 +1,22 @@
 import java.util.Scanner;
 
 public class time {
-  static double log() {
+  static double log(int daysworked) {
     Scanner sc = new Scanner(System.in);
     double totaltime = 0;
     double totallatededuc = 0;
     
-    for (int day = 1; day <= 1; day++) {
+    for (int day = 1; day <= daysworked; day++) { 
 
     System.out.printf("Enter Login time(Hr:Mn) for Day %d: ", day);
       String timeStringin = sc.nextLine();
-
+      
       int latededuc = late.totallate(timeStringin);
       
       totallatededuc += latededuc;
 
       double logintime = timeConverter(timeStringin);
+
 
     System.out.printf("Enter Logout time(Hr:Mn) for Day %d: ", day);
       String timeStringout = sc.nextLine();
@@ -23,24 +24,38 @@ public class time {
       double logouttime = timeConverter(timeStringout);
 
       double time = logouttime - logintime;
+      int breaktime = breakTime(time);
 
-      System.out.println("Total hours worked: " + time);
-      totaltime += time;
-
+      double daytime = time - breaktime;
+      System.out.println("Hours worked that day: " + daytime);
+      System.out.println("Late deduction that day: " + latededuc);
+      totaltime += daytime - breaktime;
     }
+    
+    System.out.println("Total hours worked: "+ totaltime);
+    System.out.println("Total late deduction: " + totallatededuc);
     sc.close();
     return totaltime - totallatededuc;
   }
   static double timeConverter(String timeString) {
-    String[] timeParts = timeString.split(":");
+    String[] timeParts = timeString.split(":"); 
 
     int hours = Integer.parseInt(timeParts[0]);
     int minutes = Integer.parseInt(timeParts[1]);
-
+                        
     int totalMinutes = hours * 60 + minutes;
+                                          
     double totalTimeInHours = (double) totalMinutes / 60;
 
     return totalTimeInHours;
   }
+  static int breakTime(double time){
+    int breaktime = 1;
+    if (time <= 4.99 ){
+      breaktime = 0;
+    }
+    return breaktime;
+  }  
+  
 
 }
