@@ -28,10 +28,12 @@ public class time {
 
       double daytime = time - breaktime;
       System.out.println("Hours worked that day: " + daytime);
+      System.out.println("Late deduction that day: " + latededuc);
       totaltime += daytime - breaktime;
     }
     
     System.out.println("Total hours worked: "+ totaltime);
+    System.out.println("Total late deductions: " + totallatededuc);
     sc.close();
     return totaltime - totallatededuc;
   }
